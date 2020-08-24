@@ -1,0 +1,44 @@
+@model WebBlog.Models.BlogModel
+
+@{
+  ViewData["Title"] = "Edit";
+}
+
+<div class="container">
+<h1>Update Your Post</h1>
+<hr />
+  <div class="row">
+    <div class="col-lg-5">
+      <form asp-action="Edit" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="font-weight-bold">
+           @Html.DisplayNameFor(modelItem => Model.Title)
+       </div>
+        <div class="form-group">
+             <input class="form-control" asp-for="Title" placeholder="Enter Title"/>
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+         <div class="font-weight-bold">
+           @Html.DisplayNameFor(modelItem => Model.Description)
+        </div>
+        <div class="form-group">
+            <textarea class="form-control different-control w-100" asp-for="Description" cols="30" rows="5" placeholder="Enter Description"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <img src="~/img/@Model.ImagePath" asp-append-version="true" width="200" height="200"/>
+        <div class="mt-1">
+          <td>@Html.HiddenFor(modelItem => Model.ImagePath)</td>
+        </div>
+        <div class="form-group mt-2">
+            @* <input type="file" accept="image/*"/> *@
+            <span asp-validation-for="ImageFile" class="text-danger"></span>
+        </div>
+      <div class="form-group mt-3">
+        <input type="submit" value="Edit" class="button button--active button-contactForm" />
+      </div>  
+
+      </form>
+    </div>
+  </div>
+
+</div>

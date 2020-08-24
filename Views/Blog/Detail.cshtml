@@ -1,0 +1,155 @@
+@model WebBlog.Models.BlogModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+ <!--================ Hero sm Banner start =================-->      
+  <section class="mb-30px">
+    <div class="container">
+      <div class="hero-banner hero-banner--sm">
+        <div class="hero-banner__content">
+          <h1>Post Details</h1>
+          <nav aria-label="breadcrumb" class="banner-breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Post</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Details</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--================ Hero sm Banner end =================-->    
+
+  
+  <!--================ Start Blog Post Area =================-->
+  <section class="blog-post-area section-margin mt-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+            <div class="main_blog_details">
+                <img class="img-fluid" src="@("~/img/"+Model.ImagePath)" asp-append-version="true" />
+                <h4>@Html.DisplayFor(modelItem => Model.Title)</h4>
+                <div class="user_details">
+                  <div class="float-left">
+                    <a href="#">Lifestyle</a>
+                    <a href="#">Gadget</a>
+                  </div>
+                  <div class="float-right mt-sm-0 mt-3">
+                    <div class="media">
+                      <div class="media-body">
+                        <h5>Mark wiens</h5>
+                        <p>12 Dec, 2017 11:21 am</p>
+                      </div>
+                      <div class="d-flex">
+                        <img width="42" height="42" src="img/blog/user-img.png" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p>@Html.DisplayFor(modelItem => Model.Description)</p>
+           <blockquote class="blockquote">
+             <p class="mb-0">@Html.DisplayFor(modelItem => Model.Description)</p>
+           </blockquote>
+           <p>@Html.DisplayFor(modelItem => Model.Description)</p>
+               <div class="news_d_footer flex-column flex-sm-row">
+                 <a href="#"><span class="align-middle mr-2"><i class="ti-heart"></i></span>Lily and 4 people like this</a>
+                 <a class="justify-content-sm-center ml-sm-auto mt-sm-0 mt-2" href="#"><span class="align-middle mr-2"><i class="ti-themify-favicon"></i></span>06 Comments</a>
+                 <div class="news_socail ml-sm-auto mt-sm-0 mt-2">
+               <a href="#"><i class="fab fa-facebook-f"></i></a>
+               <a href="#"><i class="fab fa-twitter"></i></a>
+               <a href="#"><i class="fab fa-dribbble"></i></a>
+               <a href="#"><i class="fab fa-behance"></i></a>
+             </div>
+               </div>
+              </div>
+        </div>
+
+        <!-- Start Blog Post Siddebar -->
+        <div class="col-lg-4 sidebar-widgets">
+            <div class="widget-wrap">
+              <div class="single-sidebar-widget newsletter-widget">
+                <h4 class="font-weight-bold">Newsletter</h4>
+                <div class="form-group mt-30">
+                  <div class="col-autos">
+                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Enter email" onfocus="this.placeholder = ''"
+                      onblur="this.placeholder = 'Enter email'">
+                  </div>
+                </div>
+                <button class="bbtns d-block mt-20 w-100">Subcribe</button>
+              </div>
+
+
+              <div class="single-sidebar-widget post-category-widget">
+                <h4 class="font-weight-bold">Category</h4>
+                <ul class="cat-list mt-20">
+                  <li>
+                    <a href="#" class="d-flex justify-content-between">
+                      <p>Technology</p>
+                      <p>(03)</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="d-flex justify-content-between">
+                      <p>Software</p>
+                      <p>(09)</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="d-flex justify-content-between">
+                      <p>Lifestyle</p>
+                      <p>(12)</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="d-flex justify-content-between">
+                      <p>Shopping</p>
+                      <p>(02)</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="d-flex justify-content-between">
+                      <p>Food</p>
+                      <p>(10)</p>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+             
+
+                <div class="single-sidebar-widget tag_cloud_widget">
+                  <h4 class="font-weight-bold">Popular Post</h4>
+                  <ul class="list">
+                    <li>
+                        <a href="#">project</a>
+                    </li>
+                    <li>
+                        <a href="#">love</a>
+                    </li>
+                    <li>
+                        <a href="#">technology</a>
+                    </li>
+                    <li>
+                        <a href="#">travel</a>
+                    </li>
+                    <li>
+                        <a href="#">software</a>
+                    </li>
+                    <li>
+                        <a href="#">life style</a>
+                    </li>
+                    <li>
+                        <a href="#">design</a>
+                    </li>
+                    <li>
+                        <a href="#">illustration</a>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        <!-- End Blog Post Siddebar -->
+      </div>
+  </section>

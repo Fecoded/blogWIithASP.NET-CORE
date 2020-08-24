@@ -1,0 +1,38 @@
+@model WebBlog.Models.BlogModel
+
+@{
+  ViewData["Title"] = "Delete";
+}
+
+<div class="container">
+  <h1>Delete Post</h1>
+<hr />
+  <div class="row">
+    <div class="col-lg-5"> 
+      <div class="font-weight-bold">
+           @Html.DisplayNameFor(modelItem => Model.Title)
+      </div>
+        <div class="form-group">
+             @Html.DisplayFor(modelItem => Model.Title)
+        </div>
+         <div class="font-weight-bold">
+             @Html.DisplayNameFor(modelItem => Model.Description)
+         </div>
+              <div class="form-group">
+                   @Html.DisplayFor(modelItem => Model.Description)
+              </div>
+         
+        <div class="form-group">
+           <img src="~/img/@Model.ImagePath" asp-append-version="true" width="200" height="200"/>
+        </div>
+        <form asp-action="Delete">
+          <div class="form-group mt-3">
+            <input type="submit" value="Delete" class="button button--active button-contactForm" />
+          </div>  
+
+        </form>
+
+     
+    </div>
+  </div>
+</div>
